@@ -1,0 +1,48 @@
+{
+  "name": "breizhcamp-mcp",
+  "version": "1.0.0",
+  "description": "Serveur MCP du programme BreizhCamp 2026 (Rennes) — outils planning, conf en cours, fiches sessions et speakers, sponsors et équipe, avec widgets MCP App (thème Matrix). Runtime Bun.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "server",
+    "client",
+    "dist",
+    "data/program.json",
+    "license",
+    "readme.md"
+  ],
+  "scripts": {
+    "build": "cross-env INPUT=client/conf-card.html vite build && cross-env INPUT=client/now-next.html vite build && cross-env INPUT=client/speaker-card.html vite build && cross-env INPUT=client/orga-card.html vite build",
+    "build:widgets": "npm run build",
+    "typecheck": "tsc -p tsconfig.server.json --noEmit && tsc -p tsconfig.json",
+    "start": "bun server/index.ts",
+    "start:dev": "concurrently -n server,confcard,nownext,speakercard,orgacard -c green,magenta,cyan,yellow,blue \"bun --watch server/index.ts\" \"cross-env NODE_ENV=development INPUT=client/conf-card.html vite build --watch\" \"cross-env NODE_ENV=development INPUT=client/now-next.html vite build --watch\" \"cross-env NODE_ENV=development INPUT=client/speaker-card.html vite build --watch\" \"cross-env NODE_ENV=development INPUT=client/orga-card.html vite build --watch\"",
+    "inspect": "bunx @modelcontextprotocol/inspector",
+    "dev": "concurrently -n server,inspector -c green,blue \"bun run start:dev\" \"sleep 2 && bun run inspect\"",
+    "refresh-data": "bun scripts/refresh-data.ts",
+    "postinstall": "npm run build"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.1.2",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "marked": "^18.0.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
