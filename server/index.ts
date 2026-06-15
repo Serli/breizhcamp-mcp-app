@@ -294,7 +294,8 @@ function landingHtml(baseUrl: string): string {
 
     <p class="foot">
       Un projet <a href="https://www.serli.com" target="_blank" rel="noopener">Serli</a> ·
-      données scrappées depuis <a href="https://www.breizhcamp.org/" target="_blank" rel="noopener">breizhcamp.org</a>.
+      données scrappées depuis <a href="https://www.breizhcamp.org/" target="_blank" rel="noopener">breizhcamp.org</a> ·
+      code source sur <a href="https://github.com/Serli/breizhcamp-mcp-app" target="_blank" rel="noopener">GitHub</a>.
     </p>
   </div>
 </body>
