@@ -36,10 +36,20 @@ const URI_NOW_NEXT = "ui://breizhcamp/now-next.html";
 const URI_SPEAKER_CARD = "ui://breizhcamp/speaker-card.html";
 const URI_ORGA_CARD = "ui://breizhcamp/orga-card.html";
 
-// Les widgets chargent des photos depuis des CDNs arbitraires (sessionize, etc.).
+// Origines des ressources chargées par les widgets (mappé par le host sur les
+// directives CSP img-src/script-src/style-src/font-src/media-src).
+// Le host n'honore PAS le wildcard global "https://*" (seuls les wildcards de
+// sous-domaine "https://*.exemple.com" sont supportés) : il faut énumérer les
+// origines réelles, sinon le host retombe sur son défaut et bloque les images.
+//   • photos des speakers           → sessionize.com
+//   • logos sponsors, photos équipe & user groups → www.breizhcamp.org
 const WIDGET_CSP = {
   connectDomains: [],
-  resourceDomains: ["https://*", "data:"],
+  resourceDomains: [
+    "https://sessionize.com",
+    "https://*.sessionize.com",
+    "https://www.breizhcamp.org",
+  ],
 };
 
 const READ_ONLY = {
