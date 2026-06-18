@@ -90,13 +90,23 @@ function slugify(name: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-/** "7h00", "8h", "14h55" → "07:00" / "08:00" / "14:55". */
+/**
+ * Le site encode les horaires des sessions comme des instants UTC dont l'heure
+ * murale correspond à l'heure locale Paris voulue (bug de fuseau côté
+ * breizhcamp.org), puis les rend dans son SSR avec 2 h de retard supplémentaires.
+ * Résultat : les chaînes affichées (ex. "6h00") sont 2 h en avance sur l'heure
+ * réelle Europe/Paris (8h00). On rétablit l'heure murale Paris en ajoutant 2 h.
+ * BreizhCamp a toujours lieu en juin → toujours CEST (UTC+2) → décalage constant.
+ */
+const SITE_TIME_OFFSET_HOURS = 2;
+
+/** "7h00", "8h", "14h55" → "07:00" / "08:00" / "14:55", recalé en Europe/Paris. */
 function hhmm(raw: string): string {
   const m = /(\d{1,2})\s*h\s*(\d{2})?/.exec(raw);
   if (!m) return "??:??";
-  const h = m[1].padStart(2, "0");
+  const h = (parseInt(m[1], 10) + SITE_TIME_OFFSET_HOURS) % 24;
   const mm = (m[2] ?? "00").padStart(2, "0");
-  return `${h}:${mm}`;
+  return `${String(h).padStart(2, "0")}:${mm}`;
 }
 
 function durationToMin(raw: string | null | undefined): number | null {
