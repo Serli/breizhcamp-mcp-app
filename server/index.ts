@@ -268,7 +268,7 @@ function landingHtml(baseUrl: string): string {
     <div class="card">
       <h3 style="margin:0 0 8px;color:var(--accent);">MCP Inspector</h3>
       <p style="margin:0;color:var(--muted);font-size:14px;">
-        <code>bunx @modelcontextprotocol/inspector</code>, choisir <em>Streamable HTTP</em>, URL : <code>${escapeHtml(mcpUrl)}</code>.
+        <code>bunx @modelcontextprotocol/inspector streamable-http ${escapeHtml(mcpUrl)}</code>.
       </p>
     </div>
 
