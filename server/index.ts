@@ -260,7 +260,7 @@ function landingHtml(baseUrl: string): string {
     <div class="card">
       <h3 style="margin:0 0 8px;color:var(--accent);">Mistral (Vibe)</h3>
       <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
-        <li><em>Context → Connecteurs → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
+        <li><em>Sidebar → Contexte → Connecteurs → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
       </ol>
     </div>
