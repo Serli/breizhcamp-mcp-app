@@ -233,7 +233,7 @@ function landingHtml(baseUrl: string): string {
     <div class="card">
       <h3 style="margin:0 0 8px;color:var(--accent);">ChatGPT</h3>
       <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
-        <li><em>Paramètres → Applications → Paramètres avancés → mode développeur</em></li>
+        <li><em>Paramètres → Applications → Paramètres avancés → Activer le mode développeur</em></li>
         <li><em>Paramètres → Applications → Créer une appli</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
         <li>Aucune authentification</li>
