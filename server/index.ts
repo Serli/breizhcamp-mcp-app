@@ -235,8 +235,8 @@ function landingHtml(baseUrl: string): string {
       <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
         <li><em>Paramètres → Applications → Paramètres avancés → mode développeur</em></li>
         <li><em>Paramètres → Applications → Créer une appli</em></li>
-        <li>Aucune authentification</li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
+        <li>Aucune authentification</li>
       </ol>
     </div>
 
