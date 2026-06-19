@@ -233,8 +233,8 @@ function landingHtml(baseUrl: string): string {
     <div class="card">
       <h3 style="margin:0 0 8px;color:var(--accent);">ChatGPT</h3>
       <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
-        <li><em>Paramètres → Applications → Paramètres avancés → Activer le mode développeur</em></li>
-        <li><em>Paramètres → Applications → Créer une appli</em></li>
+        <li><em>Paramètres → <a href="https://chatgpt.com/#settings/Connectors" target="_blank">Applications</a> → <a href="https://chatgpt.com/#settings/Connectors/Advanced" target="_blank">Paramètres avancés</a> → Activer le mode développeur</em></li>
+        <li><em>Paramètres → <a href="https://chatgpt.com/#settings/Connectors" target="_blank">Applications</a> → Créer une appli</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
         <li>Aucune authentification</li>
       </ol>
@@ -244,7 +244,7 @@ function landingHtml(baseUrl: string): string {
       <h3 style="margin:0 0 8px;color:var(--accent);">Claude</h3>
       <p style="margin:0 0 6px;color:var(--muted);font-size:14px;font-weight:600;">Web</p>
       <ol style="margin:0 0 12px;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
-        <li><em>Sidebar → Personnaliser → Connecteurs → Ajouter → Connecteur personnalisé</em></li>
+        <li><em>Sidebar → Personnaliser → Connecteurs → Ajouter → <a href="https://claude.ai/new?modal=add-custom-connector#settings/customize-connectors" target="_blank">Connecteur personnalisé</a></em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
       </ol>
       <p style="margin:0 0 6px;color:var(--muted);font-size:14px;font-weight:600;">Desktop / Codex CLI</p>
@@ -260,7 +260,7 @@ function landingHtml(baseUrl: string): string {
     <div class="card">
       <h3 style="margin:0 0 8px;color:var(--accent);">Mistral (Vibe)</h3>
       <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
-        <li><em>Sidebar → Contexte → Connecteurs → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
+        <li><em>Sidebar → Contexte → <a href="https://chat.mistral.ai/connections" target="_blank">Connecteurs</a> → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
       </ol>
     </div>
