@@ -231,8 +231,29 @@ function landingHtml(baseUrl: string): string {
     <h2>Connecter un client</h2>
 
     <div class="card">
-      <h3 style="margin:0 0 8px;color:var(--accent);">ChatGPT (Apps SDK)</h3>
-      <p style="margin:0;color:var(--muted);font-size:14px;">Paramètres → MCP/Apps → Ajouter un serveur. Transport <em>Streamable HTTP</em>, URL : <code>${escapeHtml(mcpUrl)}</code>.</p>
+      <h3 style="margin:0 0 8px;color:var(--accent);">ChatGPT</h3>
+      <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
+        <li><em>Paramètres → Applications → Paramètres avancés → mode développeur</em></li>
+        <li><em>Paramètres → Applications → Créer une appli</em></li>
+        <li>Aucune authentification</li>
+        <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;color:var(--accent);">Claude (web)</h3>
+      <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
+        <li><em>Sidebar → Personnaliser → Connecteurs → Ajouter → Connecteur personnalisé</em></li>
+        <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;color:var(--accent);">Mistral (Vibe)</h3>
+      <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
+        <li><em>Context → Connecteurs → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
+        <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
+      </ol>
     </div>
 
     <div class="card">
