@@ -269,6 +269,8 @@ function landingHtml(baseUrl: string): string {
       <h3 style="margin:0 0 8px;color:var(--accent);">MCP Inspector</h3>
       <p style="margin:0;color:var(--muted);font-size:14px;">
         <code>bunx @modelcontextprotocol/inspector streamable-http ${escapeHtml(mcpUrl)}</code>
+        ou
+        <code>npx @modelcontextprotocol/inspector streamable-http ${escapeHtml(mcpUrl)}</code>
       </p>
     </div>
 
