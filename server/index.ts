@@ -241,11 +241,20 @@ function landingHtml(baseUrl: string): string {
     </div>
 
     <div class="card">
-      <h3 style="margin:0 0 8px;color:var(--accent);">Claude (web)</h3>
-      <ol style="margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
+      <h3 style="margin:0 0 8px;color:var(--accent);">Claude</h3>
+      <p style="margin:0 0 6px;color:var(--muted);font-size:14px;font-weight:600;">Web</p>
+      <ol style="margin:0 0 12px;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7;">
         <li><em>Sidebar → Personnaliser → Connecteurs → Ajouter → Connecteur personnalisé</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
       </ol>
+      <p style="margin:0 0 6px;color:var(--muted);font-size:14px;font-weight:600;">Desktop / Codex CLI</p>
+      <pre>{
+  "mcpServers": {
+    "breizhcamp": {
+      "url": "${escapeHtml(mcpUrl)}"
+    }
+  }
+}</pre>
     </div>
 
     <div class="card">
@@ -254,17 +263,6 @@ function landingHtml(baseUrl: string): string {
         <li><em>Context → Connecteurs → Ajouter un connecteur → Connecteur MCP personnalisé</em></li>
         <li>URL : <code>${escapeHtml(mcpUrl)}</code></li>
       </ol>
-    </div>
-
-    <div class="card">
-      <h3 style="margin:0 0 8px;color:var(--accent);">Claude Desktop / Codex CLI</h3>
-      <pre>{
-  "mcpServers": {
-    "breizhcamp": {
-      "url": "${escapeHtml(mcpUrl)}"
-    }
-  }
-}</pre>
     </div>
 
     <div class="card">
